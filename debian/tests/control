@@ -1,0 +1,22 @@
+Tests:
+ bats,
+Architecture: amd64
+Depends:
+ bats,
+ ca-certificates,
+ catatonit,
+ docker-cli,
+ docker.io,
+ make,
+ podman,
+ sudo,
+ util-linux,
+ @,
+ @builddeps@,
+ @recommends@,
+Restrictions:
+ allow-stderr,
+ isolation-machine,
+ needs-internet,
+ needs-root,
+ isolation-machine

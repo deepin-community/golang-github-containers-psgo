@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -eux
+
+# avoid downloads from the internet
+export GO111MODULE=off
+# use Debian sources instead
+GOPATH=/usr/share/gocode:$(pwd)
+export GOPATH
+
+# build test binary
+make build
+
+# run upstream tests
+exec bats test/*.bats --timing --tap --verbose-run --filter-tags !debian_ignore
